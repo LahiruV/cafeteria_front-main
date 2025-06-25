@@ -26,7 +26,7 @@ const Navbar = () => {
           <Link to="/AboutUs" style={{ color: '#fff', textDecoration: 'none' }}>About</Link>
         </Typography>
         <Typography variant="subtitle1" style={{ marginRight: '1rem' }}>
-          <Link to="/Feeback" style={{ color: '#fff', textDecoration: 'none' }}>Feedback</Link>
+          <Link to="/Feedback" style={{ color: '#fff', textDecoration: 'none' }}>Feedback</Link>
         </Typography>
         <Typography variant="subtitle1" style={{ marginRight: '1rem' }}>
           <Link to="/Support" style={{ color: '#fff', textDecoration: 'none' }}>Support</Link>
