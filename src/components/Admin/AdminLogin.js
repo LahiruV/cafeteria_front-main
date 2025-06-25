@@ -1,8 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import { Avatar, Button, CssBaseline, TextField, Grid, Typography, Container, Card, CardContent, Link } from '@mui/material';
-import { makeStyles } from '@mui/styles';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import { Avatar, Button, CssBaseline, TextField, Grid, Typography, Container, Card, CardContent, makeStyles, Link } from '@material-ui/core';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 

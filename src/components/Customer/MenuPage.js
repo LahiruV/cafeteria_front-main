@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import {
     Card,
     CardContent,
@@ -9,10 +9,10 @@ import {
     Grid,
     IconButton,
     TextField,
-} from '@mui/material';
+} from '@material-ui/core';
 import axios from 'axios';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 import Navbar from '../Main/NavBar';
 import Footer from '../Main/Footer';
 import Swal from 'sweetalert2';

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Typography,
   Button,
@@ -10,8 +10,8 @@ import {
   CardContent,
   CardMedia,
   CardActions,
-} from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
+} from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 import Navbar from '../Main/NavBar.js';
 import Footer from '../Main/Footer';
 

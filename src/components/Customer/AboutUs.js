@@ -1,12 +1,12 @@
 import React from 'react';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import {
     Card,
     CardContent,
     CardMedia,
     Grid,
     Typography
-} from '@mui/material';
+} from '@material-ui/core';
 import Navbar from '../Main/NavBar';
 import NavbarLog from '../Main/LogInNavbar';
 import Footer from '../Main/Footer';
