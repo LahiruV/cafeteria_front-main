@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import '../APIUrl'
@@ -17,7 +17,7 @@ import Footer from '../Main/Footer';
 import Navbar from '../Main/LogInNavbar';
 import Copyright from '../Main/Copyright';
 
-
+const defaultTheme = createTheme();
 
 export default function LogIn() {
     const quotes = ["“You can't connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future. You have to trust in something - your gut, destiny, life, karma, whatever. This approach has never let me down, and it has made all the difference in my life.” - Steve Jobs", "“Part of being a winner is knowing when enough is enough. Sometimes you have to give up the fight and walk away, and move on to something that’s more productive.” -Donald Trump", "“If you are hardworking and determined, you will make it and that’s the bottom line. I don’t believe in an easy way.” -Isabel dos Santos"]
@@ -102,7 +102,7 @@ export default function LogIn() {
 
 
     return (
-        <>
+        <ThemeProvider theme={defaultTheme}>
             <Navbar />
             <Grid container component="main" sx={{ height: '100vh' }}>
                 <CssBaseline />
@@ -241,6 +241,6 @@ export default function LogIn() {
                 </Grid>
             </Grid>
             <Footer />
-        </>
+        </ThemeProvider>
     );
 }
