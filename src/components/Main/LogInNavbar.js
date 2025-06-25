@@ -1,6 +1,5 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography } from '@mui/material';
-import ThemeToggleButton from './ThemeToggleButton';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -21,7 +20,6 @@ const Navbar = () => {
             <Link to={link.to} style={{ color: '#fff', textDecoration: 'none' }}>{link.label}</Link>
           </Typography>
         ))}
-        <ThemeToggleButton />
       </Toolbar>
     </AppBar>
   );
