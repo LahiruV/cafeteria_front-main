@@ -82,7 +82,15 @@ const MenuForm = () => {
                 await axios.post(
                     "https://api.cloudinary.com/v1_1/dnomnqmne/image/upload",
                     formData
-                ).then(await axios.post(global.APIUrl + "/menuItem/addMenuItem", newItem)).then(await axios.put(global.APIUrl + "/inventoryItem/update", item));
+                );
+                await axios.post(
+                    global.APIUrl + "/menuItem/addMenuItem",
+                    newItem
+                );
+                await axios.put(
+                    global.APIUrl + "/inventoryItem/update",
+                    item
+                );
                 Swal.fire({
                     title: "Success!",
                     text: "Menu item added successfully.",
