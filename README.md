@@ -1,12 +1,17 @@
-# Cafeteria_Front
+# Cake Caravan Frontend
 
 
+
+This project contains the React based frontend for **Cake Caravan**, a demo cake shop website. It showcases menu items, allows customers to place orders, and provides administration interfaces for managing the shop.
 
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+Install dependencies and start the development server:
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+```bash
+npm install
+npm start
+```
 
 ## Add your files
 

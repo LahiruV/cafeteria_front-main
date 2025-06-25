@@ -4,14 +4,14 @@ import { Typography, Link } from '@material-ui/core';
 const Copyright = () => {
   return (
     <Typography variant="body2" color="text.secondary" mt={5}>
-      {'Copyright © '}
+      {'Copyright \u00A9 '}
       <Link color="inherit" href="https://mui.com/">
-      Caravan Fresh
+        Cake Caravan
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
   );
-}
+};
 
 export default Copyright;
