@@ -49,10 +49,10 @@ const Footer = () => {
             <Grid container spacing={4} justifyContent="center">
                 <Grid item xs={12} sm={6} md={3}>
                     <Typography variant="h6" gutterBottom style={{ color: 'orange' }}>
-                        Caravan Fresh
+                        Cake Caravan
                     </Typography>
                     <Typography variant="body1">
-                        Welcome to <span style={{ color: 'orange' }}> Caravan Fresh </span>, where we craft gourmet delights with passion. From classic cakes to avant-garde creations, indulge in our handcrafted treats made with the finest ingredients. Whether for a special occasion or a sweet indulgence, every bite promises a celebration of taste and tradition. Join us for a culinary adventure!
+                        Welcome to <span style={{ color: 'orange' }}> Cake Caravan </span>, where every creation is baked with love. From timeless favorites to signature delights, indulge in our handcrafted cakes made with premium ingredients. Whether celebrating a milestone or satisfying a craving, each bite promises a sweet adventure.
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}>
@@ -84,7 +84,7 @@ const Footer = () => {
                     <div className={classes.contactGrid}>
                         <Email className={classes.contactIcon} />
                         <Typography variant="body1">
-                            caravanfresh@gmail.com
+                            cakecaravan@gmail.com
                         </Typography>
                     </div>
                     <div className={classes.contactGrid}>

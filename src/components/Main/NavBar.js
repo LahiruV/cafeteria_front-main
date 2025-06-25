@@ -11,7 +11,7 @@ const Navbar = () => {
     <AppBar position="static" style={{ backgroundColor: '#212121' }}>
       <Toolbar>
         <Typography variant="h4" style={{ flexGrow: 1, paddingLeft:'25px',fontWeight: 'bold', }}>
-          <Link to="/" style={{ color: '#FFA500', textDecoration: 'none' }}>Caravan Fresh</Link>
+          <Link to="/" style={{ color: '#FFA500', textDecoration: 'none' }}>Cake Caravan</Link>
         </Typography>
         <Typography variant="subtitle1" style={{ marginRight: '1rem' }}>
           <Link to="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</Link>

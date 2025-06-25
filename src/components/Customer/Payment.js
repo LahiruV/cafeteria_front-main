@@ -164,7 +164,7 @@ const Payment = () => {
                         Payment Page
                     </Typography>
                     <Typography variant="h5" style={{ marginRight: '1rem', color: '#FFA500', textDecoration: 'none', fontWeight: 'bold' }}>
-                        Caravan Fresh
+                        Cake Caravan
                     </Typography>
                 </Toolbar>
             </AppBar>

@@ -105,7 +105,7 @@ const HomePage = () => {
       )}
       <div className={classes.root}>
         <Typography variant="h2" align="center" className={classes.title} style={{ fontWeight: 'bold', }}>
-          Welcome to <span style={{ color: 'orange' }}>Caravan-Fresh</span>
+          Welcome to <span style={{ color: 'orange' }}>Cake Caravan</span>
           <hr style={{ width: '600px' }} />
         </Typography>
         <Grid container justifyContent="center">
@@ -120,10 +120,10 @@ const HomePage = () => {
               </SwipeableViews>
               <Typography variant="body1" className={classes.description} align="center">
                 <Typography variant="h4" component="h3" gutterBottom style={{ fontWeight: 'bold' }}>
-                  Caravan - Fresh
+                  Cake Caravan
                 </Typography>
                 <Typography variant="body1" style={{ fontSize: '1.2rem', fontWeight: 'lighter' }}>
-                  Welcome to Caravan Fresh, your gateway to gourmet delights and sweet sensations! Step into our world of delectable treats where every bite is a journey of flavor and every creation is crafted with passion. At Caravan Fresh, we're more than just a cake and pastry shop – we're purveyors of happiness, serving up a tempting array of handcrafted cakes, pastries, and confections that are sure to delight your senses.
+                  Welcome to Cake Caravan, your gateway to gourmet delights and sweet sensations! Step into our world of delectable treats where every bite is a journey of flavor and every creation is crafted with passion. At Cake Caravan, we're more than just a cake shop – we're purveyors of happiness, serving up a tempting array of handcrafted cakes, pastries, and confections that are sure to delight your senses.
                 </Typography>
               </Typography>
 
@@ -143,15 +143,15 @@ const HomePage = () => {
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=2706&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  title="Pasta"
+                  image="https://images.unsplash.com/photo-1599785209707-18abfffa8b7e?auto=format&fit=crop&w=1000&q=80"
+                  title="Chocolate Cake"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Pasta
+                    Chocolate Cake
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    Indulge in our freshly baked pastries and desserts.
+                    Indulge in our rich and moist chocolate cakes.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -162,15 +162,15 @@ const HomePage = () => {
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?q=80&w=2967&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  title="Tea"
+                  image="https://images.unsplash.com/photo-1559622214-1a8b68f84b36?auto=format&fit=crop&w=1000&q=80"
+                  title="Cupcakes"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Tea
+                    Cupcakes
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    Discover our collection of exotic teas from around the world.
+                    Enjoy our colourful and fluffy cupcakes.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -199,12 +199,12 @@ const HomePage = () => {
         <hr />
         <Typography variant="body1" style={{ paddingTop: '20px', paddingBottom: '20px', backgroundColor: '#eeeeee' }} align="center">
           <Typography variant="h4" component="h3" gutterBottom style={{ fontWeight: 'bold' }}>
-            Caravan Fresh <span style={{ color: 'orange' }}>Life</span>
+            Cake Caravan <span style={{ color: 'orange' }}>Life</span>
             <hr style={{ width: '500px', }}></hr>
           </Typography>
           <Typography variant="body1" style={{ fontSize: '1.2rem', fontWeight: 'lighter' }}>
             From classic cakes to avant-garde creations, our master bakers use only the finest ingredients to create culinary masterpieces that are as beautiful as they are delicious. Indulge in the rich, velvety texture of our signature cakes or savor the delicate layers of our artisanal pastries – each bite is a celebration of taste and tradition.
-            Whether you're celebrating a special occasion or simply treating yourself to a little slice of heaven, Caravan Fresh is your destination for all things sweet and savory. Join us on a culinary adventure where every moment is a feast for the senses.
+            Whether you're celebrating a special occasion or simply treating yourself to a little slice of heaven, Cake Caravan is your destination for all things sweet and savory. Join us on a culinary adventure where every moment is a feast for the senses.
           </Typography>
         </Typography>
         <hr />
@@ -214,15 +214,15 @@ const HomePage = () => {
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  title="Pizza"
+                  image="https://images.unsplash.com/photo-1505253216365-52b2e408fe8b?auto=format&fit=crop&w=1000&q=80"
+                  title="Cheesecake"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Pizza
+                    Cheesecake
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    Enjoy our wide selection of freshly brewed coffees.
+                    Try our creamy and indulgent cheesecakes.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -233,15 +233,15 @@ const HomePage = () => {
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image="https://images.unsplash.com/photo-1593558159516-d0be2a960c52?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  title="Icecream"
+                  image="https://images.unsplash.com/photo-1601972599724-c721203e42c1?auto=format&fit=crop&w=1000&q=80"
+                  title="Fruit Cake"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Ice Cream
+                    Fruit Cake
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    Discover our collection of exotic teas from around the world.
+                    Our fruit cakes are bursting with seasonal flavors.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -252,15 +252,15 @@ const HomePage = () => {
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  title="Coffee"
+                  image="https://images.unsplash.com/photo-1545555323-934970c66aa0?auto=format&fit=crop&w=1000&q=80"
+                  title="Cookies"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Coffee
+                    Cookies
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    Enjoy our wide selection of freshly brewed coffees.
+                    Crunchy cookies for every sweet tooth.
                   </Typography>
                 </CardContent>
               </CardActionArea>
