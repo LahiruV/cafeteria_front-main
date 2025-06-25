@@ -1,7 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@mui/styles';
-import { Grid, Typography, IconButton } from '@mui/material';
-import { Facebook, Twitter, Instagram, LocationOn, Email, Phone, Print } from '@mui/icons-material';
+import { makeStyles } from '@material-ui/core/styles';
+import { Grid, Typography, IconButton } from '@material-ui/core';
+import { Facebook, Twitter, Instagram, LocationOn, Email, Phone, Print } from '@material-ui/icons';
 import Logo from '../Images/Zperx.png';
 import { Link } from 'react-router-dom';
 import Copyright from '../Main/Copyright';

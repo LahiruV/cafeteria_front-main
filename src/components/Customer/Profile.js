@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import {
     Typography,
     Grid,
@@ -9,10 +9,10 @@ import {
     Avatar,
     Modal,
     TextField,
-} from '@mui/material';
+} from '@material-ui/core';
 import Navbar from '../Main/NavBar.js';
 import Footer from '../Main/Footer';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
