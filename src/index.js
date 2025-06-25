@@ -4,12 +4,15 @@ import './index.css';
 // initialise global API url
 import './components/APIUrl';
 import App from './App';
+import { ThemeContextProvider } from './ThemeContext';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeContextProvider>
+      <App />
+    </ThemeContextProvider>
   </React.StrictMode>
 );
 
