@@ -19,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: 345,
     margin: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '100%',
+    },
   },
   media: {
     height: 200,
@@ -33,7 +36,13 @@ const useStyles = makeStyles((theme) => ({
   },
   carouselImage: {
     width: '100%',
-    height: '700px',
+    height: 700,
+    [theme.breakpoints.down('md')]: {
+      height: 400,
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: 250,
+    },
   },
   arrow: {
     position: 'absolute',
