@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
-import { ThemeContext } from './ThemeContext';
+import { ThemeContextProvider, ThemeContext } from './ThemeContext';
 import { themes } from './theme';
 import SignUp from './components/Customer/SignUp';
 import LogIn from './components/Customer/Login';
@@ -38,7 +38,8 @@ function App() {
   const theme = themes[themeIndex];
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeContextProvider>
+      <ThemeProvider theme={theme}>
         <Router>
         <Routes>
         <Route path="/OrderPaymentManage" element={<OrderPaymentManage />} />
@@ -72,6 +73,7 @@ function App() {
         </Routes>
       </Router>
       </ThemeProvider>
+    </ThemeContextProvider>
   );
 }
 
