@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import SignUp from './components/Customer/SignUp';
 import LogIn from './components/Customer/Login';
 import AdminLogin from './components/Admin/AdminLogin';
@@ -31,17 +30,9 @@ import Customer from './components/Admin/Customer';
 
 
 function App() {
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: '#FFA500',
-      },
-    },
-  });
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Routes>
+    <Router>
+      <Routes>        
         <Route path="/OrderPaymentManage" element={<OrderPaymentManage />} />
         <Route path="/Customer" element={<Customer />} />
         <Route path="/SalaryForm" element={<SalaryForm />} />
@@ -70,9 +61,8 @@ function App() {
         <Route path="/CheckoutPage" element={<CheckoutPage/>} />
         <Route path="/Orders" element={<Orders/>} />
         <Route path="/EmployeeLogin" element={<EmployeeLogin/>} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+      </Routes>
+    </Router>
   );
 }
 
