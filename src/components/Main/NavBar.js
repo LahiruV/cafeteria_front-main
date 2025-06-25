@@ -7,38 +7,30 @@ const Navbar = () => {
     sessionStorage.setItem('cusmail', 'empty');
     window.location.href = '/';
   };
+  const navLinks = [
+    { to: '/', label: 'Home' },
+    { to: '/MenuPage', label: 'Menu' },
+    { to: '/CartPage', label: 'Cart' },
+    { to: '/AboutUs', label: 'About' },
+    { to: '/Feedback', label: 'Feedback' },
+    { to: '/Support', label: 'Support' },
+    { to: '/Orders', label: 'Your Orders' },
+    { to: '/Profile', label: 'Profile' },
+  ];
+
   return (
-    <AppBar position="static" style={{ backgroundColor: '#212121' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#212121' }}>
       <Toolbar>
-        <Typography variant="h4" style={{ flexGrow: 1, paddingLeft:'25px',fontWeight: 'bold', }}>
+        <Typography variant="h4" sx={{ flexGrow: 1, pl: '25px', fontWeight: 'bold' }}>
           <Link to="/" style={{ color: '#FFA500', textDecoration: 'none' }}>Cake Caravan</Link>
         </Typography>
-        <Typography variant="subtitle1" style={{ marginRight: '1rem' }}>
-          <Link to="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</Link>
-        </Typography>
-        <Typography variant="subtitle1" style={{ marginRight: '1rem' }}>
-          <Link to="/MenuPage" style={{ color: '#fff', textDecoration: 'none' }}>Menu</Link>
-        </Typography>
-        <Typography variant="subtitle1" style={{ marginRight: '1rem' }}>
-          <Link to="/CartPage" style={{ color: '#fff', textDecoration: 'none' }}>Cart</Link>
-        </Typography>
-        <Typography variant="subtitle1" style={{ marginRight: '1rem' }}>
-          <Link to="/AboutUs" style={{ color: '#fff', textDecoration: 'none' }}>About</Link>
-        </Typography>
-        <Typography variant="subtitle1" style={{ marginRight: '1rem' }}>
-          <Link to="/Feedback" style={{ color: '#fff', textDecoration: 'none' }}>Feedback</Link>
-        </Typography>
-        <Typography variant="subtitle1" style={{ marginRight: '1rem' }}>
-          <Link to="/Support" style={{ color: '#fff', textDecoration: 'none' }}>Support</Link>
-        </Typography>
-        <Typography variant="subtitle1" style={{ marginRight: '1rem' }}>
-          <Link to="/Orders" style={{ color: '#fff', textDecoration: 'none' }}>Your Orders</Link>
-        </Typography>
-        <Typography variant="subtitle1" style={{ marginRight: '1rem' }}>
-          <Link to="/Profile" style={{ color: '#fff', textDecoration: 'none' }}>Profile</Link>
-        </Typography>
-        <Typography variant="subtitle1" style={{ marginRight: '1rem' }}>
-          <Link  onClick={handleLogout} style={{ color: '#fff', textDecoration: 'none' }}>Log Out</Link>
+        {navLinks.map((link) => (
+          <Typography key={link.to} variant="subtitle1" sx={{ mr: 2 }}>
+            <Link to={link.to} style={{ color: '#fff', textDecoration: 'none' }}>{link.label}</Link>
+          </Typography>
+        ))}
+        <Typography variant="subtitle1" sx={{ mr: 2 }}>
+          <Link onClick={handleLogout} style={{ color: '#fff', textDecoration: 'none' }}>Log Out</Link>
         </Typography>
       </Toolbar>
     </AppBar>
