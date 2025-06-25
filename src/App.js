@@ -1,5 +1,8 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
+import { ThemeContextProvider, ThemeContext } from './ThemeContext';
+import { themes } from './theme';
 import SignUp from './components/Customer/SignUp';
 import LogIn from './components/Customer/Login';
 import AdminLogin from './components/Admin/AdminLogin';
@@ -31,16 +34,13 @@ import Customer from './components/Admin/Customer';
 
 
 function App() {
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: '#FFA500',
-      },
-    },
-  });
+  const { themeIndex } = React.useContext(ThemeContext);
+  const theme = themes[themeIndex];
+
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
+    <ThemeContextProvider>
+      <ThemeProvider theme={theme}>
+        <Router>
         <Routes>
         <Route path="/OrderPaymentManage" element={<OrderPaymentManage />} />
         <Route path="/Customer" element={<Customer />} />
@@ -72,7 +72,8 @@ function App() {
         <Route path="/EmployeeLogin" element={<EmployeeLogin/>} />
         </Routes>
       </Router>
-    </ThemeProvider>
+      </ThemeProvider>
+    </ThemeContextProvider>
   );
 }
 
