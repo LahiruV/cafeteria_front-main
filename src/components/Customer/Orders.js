@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
     Typography,
     TextField,
     Button,
     Grid,
     Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
-} from '@material-ui/core';
+} from '@mui/material';
 import Navbar from '../Main/NavBar.js';
 import Footer from '../Main/Footer';
 import axios from 'axios';
