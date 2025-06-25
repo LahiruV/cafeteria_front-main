@@ -1,3 +1,6 @@
+/* eslint-env browser, node */
+/* global globalThis */
+
 // local development URL
 // const API_URL = 'http://localhost:5222';
 
