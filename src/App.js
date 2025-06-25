@@ -19,7 +19,7 @@ import HomePage from './components/Customer/HomePage';
 import AboutUs from './components/Customer/AboutUs';
 import MenuPage from './components/Customer/MenuPage';
 import CartPage from './components/Customer/CartPage';
-import Feeback from './components/Customer/Feeback';
+import Feedback from './components/Customer/Feedback';
 import Support from './components/Customer/Support';
 import Payment from './components/Customer/Payment';
 import CashOnDelivery from './components/Customer/CashOnDelivery';
@@ -53,7 +53,7 @@ function App() {
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/MenuPage" element={<MenuPage />} />
         <Route path="/CartPage" element={<CartPage />} />
-        <Route path="/Feeback" element={<Feeback/>} />
+        <Route path="/Feedback" element={<Feedback/>} />
         <Route path="/Support" element={<Support/>} />
         <Route path="/Payment" element={<Payment/>} />
         <Route path="/CashOnDelivery" element={<CashOnDelivery/>} />
