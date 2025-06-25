@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import {
     Card,
     CardContent,
@@ -12,10 +12,10 @@ import {
     ListItemText,
     Divider,
     Avatar
-} from '@material-ui/core';
+} from '@mui/material';
 import Navbar from '../Main/NavBar.js';
 import Footer from '../Main/Footer';
-import Rating from '@material-ui/lab/Rating';
+import Rating from '@mui/material/Rating';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
