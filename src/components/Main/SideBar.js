@@ -59,7 +59,7 @@ const SideBar = () => {
           <Avatar
             alt="Company Logo"
             src={ZperxLogo}
-            sx={{ width: 80, height: 80, border: '2px solid yellow' }}
+            sx={{ width: 80, height: 80, border: '2px solid #1c2331' }}
           />
         </Toolbar>
         <List>
