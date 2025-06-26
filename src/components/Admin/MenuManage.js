@@ -19,8 +19,8 @@ const MenuManage = () => {
 
     useEffect(() => {
         fetchMenuDetails();
-        const editBtn = false;     
-        const data = {            
+        const editBtn = false;
+        const data = {
             editBtn
         };
         localStorage.setItem('selectedMenu', JSON.stringify(data));
@@ -86,9 +86,9 @@ const MenuManage = () => {
     };
 
     const columns = [
-        { field: 'itemId', headerName: 'Item ID', width: 150 },
-        { field: 'inventoryItem', headerName: 'Inventory Item', width: 150 },
-        { field: 'itemName', headerName: 'Item Name', width: 150 },
+        { field: 'itemId', headerName: 'Item ID', width: 110 },
+        // { field: 'inventoryItem', headerName: 'Inventory Item', width: 120 },
+        { field: 'itemName', headerName: 'Item Name', width: 100 },
         {
             field: 'status',
             headerName: 'Status',
@@ -103,12 +103,12 @@ const MenuManage = () => {
                 </Button>
             ),
         },
-        { field: 'description', headerName: 'Description', width: 250 },
-        { field: 'calorieCount', headerName: 'Calorie Count', width: 150 },
-        { field: 'price', headerName: 'Price', width: 150 },
+        { field: 'description', headerName: 'Description', width: 150 },
+        { field: 'calorieCount', headerName: 'Calorie Count', width: 100 },
+        { field: 'price', headerName: 'Price', width: 100 },
         { field: 'categoryType', headerName: 'Category Type', width: 150 },
-        { field: 'quantity', headerName: 'Quantity', width: 150 },
-        { field: 'picture', headerName: 'Picture', width: 150, renderCell: renderPicture },
+        { field: 'quantity', headerName: 'Quantity', width: 100 },
+        { field: 'picture', headerName: 'Picture', width: 100, renderCell: renderPicture },
         {
             field: 'actions',
             headerName: 'Actions',

@@ -21,8 +21,8 @@ const EmployeeManage = () => {
     useEffect(() => {
         fetchEmployeeDetails();
         fetchSalaryDetails();
-        const editBtn = false;     
-        const data = {            
+        const editBtn = false;
+        const data = {
             editBtn
         };
         localStorage.setItem('selectedEmployee', JSON.stringify(data));
@@ -39,8 +39,8 @@ const EmployeeManage = () => {
         } catch (error) {
             console.error('Error fetching employee details:', error);
         }
-    };  
-      const fetchSalaryDetails = async () => {
+    };
+    const fetchSalaryDetails = async () => {
         try {
             const response = await axios.get(global.APIUrl + '/salary/all');
             const salaryWithId = response.data.map((salary, index) => ({
@@ -58,7 +58,7 @@ const EmployeeManage = () => {
     };
 
     const handleEditEmployee = (selectedEmployee) => {
-        const editBtn = true;     
+        const editBtn = true;
         const data = {
             selectedEmployee,
             editBtn
@@ -121,15 +121,15 @@ const EmployeeManage = () => {
     const columns = [
         { field: 'uid', headerName: 'Employee ID', width: 150 },
         { field: 'name', headerName: 'Employee Name', width: 150 },
-        { field: 'nic', headerName: 'NIC', width: 150 },
-        { field: 'type', headerName: 'Type', width: 100 },
+        { field: 'nic', headerName: 'NIC', width: 100 },
+        { field: 'type', headerName: 'Type', width: 80 },
         { field: 'salary', headerName: 'Salary (Per Day)', width: 150 },
         { field: 'email', headerName: 'Email', width: 150 },
         { field: 'phone', headerName: 'Phone No', width: 150 },
         {
             field: 'status',
             headerName: 'Status',
-            width: 200,
+            width: 100,
             renderCell: (params) => (
                 <Button
                     variant="outlined"
@@ -164,14 +164,14 @@ const EmployeeManage = () => {
                 </div>
             ),
         },
-    ];  
-      const column = [
+    ];
+    const column = [
         { field: 'uid', headerName: 'Employee ID', width: 200 },
         { field: 'name', headerName: 'Employee Name', width: 200 },
         { field: 'date', headerName: 'Date', width: 200 },
         { field: 'salary', headerName: 'Per Day Salary', width: 200 },
         { field: 'days', headerName: 'Working Days', width: 200 },
-        { field: 'fullSalary', headerName: 'Full Salary', width: 200 },             
+        { field: 'fullSalary', headerName: 'Full Salary', width: 200 },
     ];
 
     const handleAddSalary = () => {
@@ -179,7 +179,7 @@ const EmployeeManage = () => {
     }
 
     return (
-        <div style={{ display: 'flex', height: '100vh', maxWidth: '161vh' }}>
+        <div style={{ display: 'flex', height: '100vh' }}>
             <Sidebar />
             <div style={{ flexGrow: 1, padding: 20, backgroundColor: '#ecf0f1', display: 'flex', flexDirection: 'column' }}>
                 <AppBar position="static" sx={{ backgroundColor: '#1c2331', boxShadow: 'none' }}>
@@ -193,7 +193,7 @@ const EmployeeManage = () => {
                         </Button>
                         &nbsp;
                         &nbsp;
-                         <Button variant="contained" color="primary" onClick={handleAddSalary}>
+                        <Button variant="contained" color="primary" onClick={handleAddSalary}>
                             Salary
                         </Button>
                     </Toolbar>

@@ -128,25 +128,25 @@ const OrderPaymentManage = () => {
 
     };
 
-                
-                
+
+
 
 
     async function handleDeletePaid(orderID) {
-                await axios.delete(global.APIUrl + "/payOrder/deletePaidOrder/" + orderID).then(() => {
-                    window.location.href = "/OrderPaymentManage";
+        await axios.delete(global.APIUrl + "/payOrder/deletePaidOrder/" + orderID).then(() => {
+            window.location.href = "/OrderPaymentManage";
 
-                }).catch((err) => {
-                    Swal.fire({
-                        title: "Error!",
-                        text: "Order Not Delete",
-                        icon: 'error',
-                        confirmButtonText: "OK",
-                        type: "success"
-                    });
-                });
+        }).catch((err) => {
+            Swal.fire({
+                title: "Error!",
+                text: "Order Not Delete",
+                icon: 'error',
+                confirmButtonText: "OK",
+                type: "success"
+            });
+        });
 
-            }
+    }
 
     const handleDeleteCod = async (orderID) => {
         await axios.delete(global.APIUrl + "/codOrder/deleteOrder/" + orderID).then(() => {
@@ -192,25 +192,25 @@ const OrderPaymentManage = () => {
             headerName: 'Actions',
             width: 300,
             renderCell: (params) => (
-                <div>                   
+                <div>
                     <IconButton style={{ color: 'green' }} onClick={() => handleEditPaid(params.row, 'Accept')}>
-                    <CheckCircleIcon />
-                </IconButton>
-                <IconButton style={{ color: 'red' }} onClick={() => handleEditPaid(params.row, 'Reject')}>
-                    <CancelIcon />
-                </IconButton>
-                <IconButton style={{ color: 'orange' }} onClick={() => handleEditPaid(params.row, 'Cooking')}>
-                    <RestaurantIcon />
-                </IconButton>
-                <IconButton style={{ color: 'purple' }} onClick={() => handleEditPaid(params.row, 'Delivering')}>
-                    <LocalShippingIcon />
-                </IconButton>
-                <IconButton style={{ color: 'green' }} onClick={() => handleEditPaid(params.row, 'Completed')}>
-                    <DoneIcon />
-                </IconButton>
-                {(params.row.status === 'Reject' && (<IconButton style={{ color: 'black' }} onClick={() => handleDeletePaid(params.row.orderID)}>
-                    <DeleteIcon />
-                </IconButton>))}
+                        <CheckCircleIcon />
+                    </IconButton>
+                    <IconButton style={{ color: 'red' }} onClick={() => handleEditPaid(params.row, 'Reject')}>
+                        <CancelIcon />
+                    </IconButton>
+                    <IconButton style={{ color: 'orange' }} onClick={() => handleEditPaid(params.row, 'Cooking')}>
+                        <RestaurantIcon />
+                    </IconButton>
+                    <IconButton style={{ color: 'purple' }} onClick={() => handleEditPaid(params.row, 'Delivering')}>
+                        <LocalShippingIcon />
+                    </IconButton>
+                    <IconButton style={{ color: 'green' }} onClick={() => handleEditPaid(params.row, 'Completed')}>
+                        <DoneIcon />
+                    </IconButton>
+                    {(params.row.status === 'Reject' && (<IconButton style={{ color: 'black' }} onClick={() => handleDeletePaid(params.row.orderID)}>
+                        <DeleteIcon />
+                    </IconButton>))}
                 </div>
             ),
         },
@@ -246,7 +246,7 @@ const OrderPaymentManage = () => {
             width: 300,
             renderCell: (params) => (
                 <div>
-                 <IconButton style={{ color: 'green' }} onClick={() => handleEditCod(params.row, 'Accept')}>
+                    <IconButton style={{ color: 'green' }} onClick={() => handleEditCod(params.row, 'Accept')}>
                         <CheckCircleIcon />
                     </IconButton>
                     <IconButton style={{ color: 'red' }} onClick={() => handleEditCod(params.row, 'Reject')}>
@@ -264,7 +264,7 @@ const OrderPaymentManage = () => {
                     {(params.row.status === 'Reject' && (<IconButton style={{ color: 'black' }} onClick={() => handleDeleteCod(params.row.orderID)}>
                         <DeleteIcon />
                     </IconButton>))}
-            </div>
+                </div>
             ),
         },
     ];
@@ -301,7 +301,7 @@ const OrderPaymentManage = () => {
                         </Typography>
                     </Toolbar>
                 </AppBar>
-                <div style={{ padding: 20, backgroundColor: '#ffffff', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', maxWidth: '161vh' }}>
+                <div style={{ padding: 20, backgroundColor: '#ffffff', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', maxWidth: '150vh' }}>
                     <Typography variant="h5" gutterBottom>
                         Paid Orders
                     </Typography>
@@ -309,7 +309,7 @@ const OrderPaymentManage = () => {
                         <DataGrid rows={paidorder} columns={columns} pageSize={5} />
                     </div>
                 </div>
-                <div style={{ padding: 20, backgroundColor: '#ffffff', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', maxWidth: '161vh' }}>
+                <div style={{ padding: 20, backgroundColor: '#ffffff', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', maxWidth: '150vh' }}>
                     <Typography variant="h5" gutterBottom>
                         Cash On Delivery Orders
                     </Typography>

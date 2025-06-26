@@ -74,16 +74,16 @@ const SupportTicket = () => {
     };
 
     const columns = [
-        { field: 'uniqueId', headerName: 'Ticket ID', width: 150 },
+        { field: 'uniqueId', headerName: 'Ticket ID', width: 110 },
         { field: 'name', headerName: 'Ticket Name', width: 150 },
-        { field: 'email', headerName: 'Email', width: 250 },
-        { field: 'phone', headerName: 'Phone No', width: 150 },
-        { field: 'issueDetail', headerName: 'Details', width: 900 },
+        { field: 'email', headerName: 'Email', width: 200 },
+        { field: 'phone', headerName: 'Phone No', width: 110 },
+        { field: 'issueDetail', headerName: 'Details', width: 270 },
         { field: 'todayDate', headerName: 'Date', width: 150 },
         {
             field: 'status',
             headerName: 'Status',
-            width: 200,
+            width: 120,
             renderCell: (params) => (
                 <Button
                     variant="outlined"
@@ -97,7 +97,7 @@ const SupportTicket = () => {
         {
             field: 'actions',
             headerName: 'Actions',
-            width: 150,
+            width: 100,
             renderCell: (params) => (
                 <div>
                     <IconButton color="error" onClick={() => handleUpdateTicketReject(params.row)}>

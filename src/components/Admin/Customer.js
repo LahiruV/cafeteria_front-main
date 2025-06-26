@@ -11,7 +11,7 @@ const Customer = () => {
     const [customer, setCustomer] = useState([]);
 
     useEffect(() => {
-        fetchCustomerDetails();        
+        fetchCustomerDetails();
     }, []);
 
     const fetchCustomerDetails = async () => {
@@ -25,15 +25,15 @@ const Customer = () => {
         } catch (error) {
             console.error('Error fetching customer details:', error);
         }
-    };           
+    };
 
-    const columns = [        
-        { field: 'name', headerName: 'Name', width: 250 },
+    const columns = [
+        { field: 'name', headerName: 'Name', width: 210 },
         { field: 'email', headerName: 'Email', width: 250 },
         { field: 'phone', headerName: 'Phone Number', width: 250 },
         { field: 'isLoyal', headerName: 'Loyal Status', width: 250 },
         { field: 'points', headerName: 'Loyal Points', width: 250 },
-    ];  
+    ];
     return (
         <div style={{ display: 'flex', height: '100vh', maxWidth: '161vh' }}>
             <Sidebar />
@@ -42,18 +42,18 @@ const Customer = () => {
                     <Toolbar>
                         <Typography variant="h6" component="div">
                             Customer Management
-                        </Typography>                       
+                        </Typography>
                     </Toolbar>
                 </AppBar>
 
                 <div style={{ padding: 20, backgroundColor: '#ffffff', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', maxWidth: '161vh' }}>
                     <Typography variant="h5" gutterBottom>
-                    Customer Details
+                        Customer Details
                     </Typography>
                     <div style={{ width: '100%' }}>
                         <DataGrid rows={customer} columns={columns} pageSize={5} />
                     </div>
-                </div>              
+                </div>
             </div>
         </div>
     );
