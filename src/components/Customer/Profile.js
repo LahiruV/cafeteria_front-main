@@ -1,63 +1,81 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import {
     Typography,
     Grid,
-    Divider,
     Paper,
     Button,
     Avatar,
     Modal,
     TextField,
+    Divider
 } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import Swal from 'sweetalert2';
+import axios from 'axios';
 import Navbar from '../Main/NavBar.js';
 import Footer from '../Main/Footer';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import axios from 'axios';
-import Swal from 'sweetalert2';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        flexGrow: 1,
+        minHeight: '100vh',
+        backgroundColor: '#f4f6f8',
+        paddingBottom: theme.spacing(4),
     },
     header: {
         textAlign: 'center',
-        margin: theme.spacing(2, 0),
+        padding: theme.spacing(4, 0, 2),
     },
     paper: {
-        padding: theme.spacing(3),
+        padding: theme.spacing(4),
         margin: 'auto',
-        maxWidth: 400,
+        maxWidth: 600,
+        borderRadius: theme.spacing(2),
+        boxShadow: theme.shadows[4],
     },
-    infoItem: {
+    avatarWrapper: {
+        display: 'flex',
+        justifyContent: 'center',
+        marginBottom: theme.spacing(3),
+    },
+    avatar: {
+        width: theme.spacing(12),
+        height: theme.spacing(12),
+        backgroundColor: theme.palette.primary.main,
+    },
+    label: {
+        fontWeight: 600,
+        color: '#555',
+    },
+    value: {
         marginBottom: theme.spacing(2),
     },
-    bold: {
-        fontWeight: 'bold',
-    },
-    button: {
-        marginTop: theme.spacing(2),
-    },
-    icon: {
-        backgroundColor: theme.palette.secondary.main,
-        marginLeft: '150px',
-        width: theme.spacing(10),
-        height: theme.spacing(10),
+    buttonsRow: {
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
+        marginTop: theme.spacing(4),
+    },
+    loyaltyBtn: {
+        backgroundColor: '#009688',
+        color: '#fff',
+        '&:hover': {
+            backgroundColor: '#00796b',
+        },
     },
     modalPaper: {
         position: 'absolute',
         width: 400,
-        backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
-        boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),
+        backgroundColor: '#fff',
+        borderRadius: theme.spacing(1),
+        boxShadow: theme.shadows[6],
+        padding: theme.spacing(4),
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
     },
+    modalHeader: {
+        marginBottom: theme.spacing(2),
+    }
 }));
 
 function Profile() {
@@ -66,16 +84,23 @@ function Profile() {
     const [profile, setProfile] = useState([]);
     const [editModalOpen, setEditModalOpen] = useState(false);
     const profileDetails = profile[0] || {};
-    const [edtname, setEdtname] = useState(profileDetails.name);
-    const [edtphone, setEdtphone] = useState(profileDetails.phone);    
+    const [edtname, setEdtname] = useState('');
+    const [edtphone, setEdtphone] = useState('');
 
     useEffect(() => {
         fetchProfile();
     }, []);
 
+    useEffect(() => {
+        if (profile.length) {
+            setEdtname(profileDetails.name || '');
+            setEdtphone(profileDetails.phone || '');
+        }
+    }, [profile]);
+
     const fetchProfile = async () => {
         try {
-            const res = await axios.get(global.APIUrl+`/user/profile/${email}`);
+            const res = await axios.get(global.APIUrl + `/user/profile/${email}`);
             setProfile(res.data);
         } catch (error) {
             console.error('Error fetching profile:', error);
@@ -84,7 +109,7 @@ function Profile() {
 
     const handleDeleteProfile = async () => {
         try {
-            const res = await axios.delete(global.APIUrl+`/user/delete/${email}`);
+            await axios.delete(global.APIUrl + `/user/delete/${email}`);
             sessionStorage.setItem('cusmail', 'empty');
             window.location.href = "/";
         } catch (error) {
@@ -94,210 +119,110 @@ function Profile() {
 
     const handleLoyalProfile = async () => {
         try {
-            profileDetails.isLoyal = true;
-            const editData = {
-                name: profileDetails.name,
-                email: profileDetails.email,
-                password: profileDetails.password,
-                phone: profileDetails.phone,
-                isLoyal: profileDetails.isLoyal,
-                points: profileDetails.points,
-                userType: profileDetails.userType
+            const updatedData = {
+                ...profileDetails,
+                isLoyal: true
             };
-
-            console.log(editData);
-
-            const res = await axios.put(global.APIUrl+`/user/update`, editData);
-
-            Swal.fire({
-                title: "Success!",
-                text: "Loyalty Activated",
-                icon: 'success',
-                confirmButtonText: "OK"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "/Profile";
-                }
-            });
+            await axios.put(global.APIUrl + `/user/update`, updatedData);
+            Swal.fire("Success", "Loyalty Activated", "success").then(() => window.location.reload());
         } catch (error) {
             console.error('Error updating profile:', error);
         }
     };
 
-    const handleEditProfile = () => {
-        setEditModalOpen(true);
-    };
-
-    const handleModalClose = () => {
-        setEditModalOpen(false);
-    };
-
     const handleSaveChanges = async () => {
         try {
-            var data = {
-                name: edtname,                
+            const updatedData = {
+                ...profileDetails,
+                name: edtname,
                 phone: edtphone,
-                email:profileDetails.email,               
-                password: profileDetails.password,                
-                isLoyal: profileDetails.isLoyal,
-                points: profileDetails.points,
-                userType: profileDetails.userType
             };
-            console.log(data);
-            const res = await axios.put(global.APIUrl+`/user/update`, data);
-            Swal.fire({
-                title: "Success!",
-                text: "Profile Updated Successfully",
-                icon: 'success',
-                confirmButtonText: "OK"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.reload();
-                }
-            });
+            await axios.put(global.APIUrl + `/user/update`, updatedData).then(
+                setEditModalOpen(false)
+            );
+            Swal.fire("Success", "Profile Updated", "success").then(() => window.location.reload());
         } catch (error) {
-            console.error('Error updating profile:', error);
+            console.error('Error saving changes:', error);
         }
     };
 
     return (
         <div className={classes.root}>
             <Navbar />
-            <div className={classes.header}>
-                <Typography variant="h3" component="h1">Profile</Typography>
-            </div>
-            <hr style={{ width: 100, }}></hr>
-            <br />
-            <br />
-            <Grid container justify="center">
-                <Grid item xs={12} sm={8}>
-                    <Paper className={classes.paper}>
-                        <div className={classes.infoItem}>
-                            <Avatar className={classes.icon}>
-                                <AccountCircleIcon />
-                            </Avatar>
-                            <br />
-                            <Typography variant="h6" className={classes.bold}>
-                                Name:
-                            </Typography>
-                            <Typography variant="body1">
-                                {profileDetails.name}
-                            </Typography>
-                        </div>
-                        <div className={classes.infoItem}>
-                            <Typography variant="h6" className={classes.bold}>
-                                Email:
-                            </Typography>
-                            <Typography variant="body1">
-                                {profileDetails.email}
-                            </Typography>
-                        </div>
-                        <div className={classes.infoItem}>
-                            <Typography variant="h6" className={classes.bold}>
-                                Phone:
-                            </Typography>
-                            <Typography variant="body1">
-                                {profileDetails.phone}
-                            </Typography>
-                        </div>
-                        <div className={classes.infoItem}>
-                            <Typography variant="h6" className={classes.bold}>
-                                Loyalty Status:
-                            </Typography>
-                            <Typography variant="body1">
-                                {profileDetails.isLoyal === 'true' ? 'Loyal Customer' : 'Not Loyal Customer'}
-                            </Typography>
-                        </div>
-                        {profileDetails.isLoyal === 'true' && (
-                            <div className={classes.infoItem}>
-                                <Typography variant="h6" className={classes.bold}>
-                                    Points:
-                                </Typography>
-                                <Typography variant="body1">
-                                    {profileDetails.points}
-                                </Typography>
+            <div style={{ height: '100vh' }}>
+                <div className={classes.header}>
+                    <Typography variant="h4">My Profile</Typography>
+                    <Divider variant="middle" style={{ margin: '16px auto', width: '60px' }} />
+                </div>
+                <Grid container justifyContent="center">
+                    <Grid item xs={12} md={8}>
+                        <Paper className={classes.paper}>
+                            <div className={classes.avatarWrapper}>
+                                <Avatar className={classes.avatar}>
+                                    <AccountCircleIcon fontSize="large" />
+                                </Avatar>
                             </div>
-                        )}
-                        {profileDetails.isLoyal !== 'true' && (
-                            <>
-                                <Button
-                                    variant="contained"
-                                    className={classes.button}
-                                    onClick={handleLoyalProfile}
-                                    style={{ backgroundColor: '#009688', color: '#fff' }}
-                                >
-                                    Activate Loyalty
-                                </Button>
-                                &nbsp;
-                                &nbsp;
-                            </>
-                        )}
-                        <Button
-                            variant="contained"
-                            color="secondary"
-                            className={classes.button}
-                            onClick={handleDeleteProfile}
-                        >
-                            Delete Profile
-                        </Button>
-                        &nbsp;
-                        &nbsp;
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            className={classes.button}
-                            onClick={handleEditProfile}
-                        >
-                            Edit Profile
-                        </Button>
-                    </Paper>
+                            <Typography className={classes.label}>Name:</Typography>
+                            <Typography className={classes.value}>{profileDetails.name}</Typography>
+                            <Typography className={classes.label}>Email:</Typography>
+                            <Typography className={classes.value}>{profileDetails.email}</Typography>
+                            <Typography className={classes.label}>Phone:</Typography>
+                            <Typography className={classes.value}>{profileDetails.phone}</Typography>
+                            <Typography className={classes.label}>Loyalty Status:</Typography>
+                            <Typography className={classes.value}>
+                                {profileDetails.isLoyal === 'true' ? 'Loyal Customer' : 'Not Loyal'}
+                            </Typography>
+                            {profileDetails.isLoyal === 'true' && (
+                                <>
+                                    <Typography className={classes.label}>Points:</Typography>
+                                    <Typography className={classes.value}>{profileDetails.points}</Typography>
+                                </>
+                            )}
+
+                            <div className={classes.buttonsRow}>
+                                {profileDetails.isLoyal !== 'true' && (
+                                    <Button className={classes.loyaltyBtn} onClick={handleLoyalProfile}>Activate Loyalty</Button>
+                                )}
+                                <Button variant="outlined" color="secondary" onClick={handleDeleteProfile}>Delete Profile</Button>
+                                <Button variant="contained" color="primary" onClick={() => setEditModalOpen(true)}>Edit Profile</Button>
+                            </div>
+                        </Paper>
+                    </Grid>
                 </Grid>
-            </Grid>
-            <Modal
-                open={editModalOpen}
-                onClose={handleModalClose}
-                aria-labelledby="simple-modal-title"
-                aria-describedby="simple-modal-description"
-            >
-                <div className={classes.modalPaper}>
-                    <Typography variant="h6" id="modal-title">
-                        Edit Profile
-                    </Typography>
-                    <form>
+
+                <Modal open={editModalOpen} onClose={() => setEditModalOpen(false)}>
+                    <div className={classes.modalPaper}>
+                        <Typography variant="h6" className={classes.modalHeader}>Edit Profile</Typography>
                         <TextField
-                            id="name"
-                            name="name"
                             label="Name"
+                            fullWidth
+                            margin="normal"
                             value={edtname}
                             onChange={(e) => setEdtname(e.target.value)}
+                        />
+                        <TextField
+                            label="Phone"
                             fullWidth
                             margin="normal"
-                            required
-                        />                       
-                        <TextField
-                            id="phone"
-                            name="phone"
-                            label="Phone"
+                            type="tel"
                             value={edtphone}
                             onChange={(e) => setEdtphone(e.target.value)}
-                            fullWidth
-                            margin="normal"
-                            type='number'
-                            required
                         />
                         <Button
+                            fullWidth
                             variant="contained"
                             color="primary"
                             onClick={handleSaveChanges}
+                            style={{ marginTop: '16px' }}
                         >
                             Save Changes
                         </Button>
-                    </form>
-                </div>
-            </Modal>
-            <br />
-            <br />
-            <Footer />
+                    </div>
+                </Modal>
+            </div>
+            <div style={{ marginBottom: '-100px' }}>
+                <Footer />
+            </div>
         </div>
     );
 }

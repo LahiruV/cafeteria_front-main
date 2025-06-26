@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     padding: theme.spacing(4),
-    paddingBottom:'175px'
+    paddingBottom: '175px'
   },
   title: {
     marginBottom: theme.spacing(4),
@@ -153,7 +153,7 @@ const CartPage = () => {
             </Typography>
             <Grid container spacing={2}>
               <Grid item>
-                <Button variant="contained" style={{backgroundColor:'red', color:'white'}} onClick={handleClearCart}>
+                <Button variant="contained" style={{ backgroundColor: 'red', color: 'white' }} onClick={handleClearCart}>
                   Clear Cart
                 </Button>
               </Grid>
@@ -166,7 +166,7 @@ const CartPage = () => {
           </div>
         )}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
 
   );

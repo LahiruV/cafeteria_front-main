@@ -91,9 +91,9 @@ const HomePage = () => {
   };
 
   const carouselImages = [
-    'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1621857426350-ddab819cf0cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1595144780677-6d0b5abbd089?q=80&w=1443&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    'https://images.unsplash.com/photo-1542826438-bd32f43d626f?q=80&w=1592&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   ];
 
   return (
@@ -143,7 +143,7 @@ const HomePage = () => {
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image="https://images.unsplash.com/photo-1599785209707-18abfffa8b7e?auto=format&fit=crop&w=1000&q=80"
+                  image="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=803&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   title="Chocolate Cake"
                 />
                 <CardContent>
@@ -162,7 +162,7 @@ const HomePage = () => {
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image="https://images.unsplash.com/photo-1559622214-1a8b68f84b36?auto=format&fit=crop&w=1000&q=80"
+                  image="https://images.unsplash.com/photo-1587668178277-295251f900ce?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   title="Cupcakes"
                 />
                 <CardContent>
@@ -170,7 +170,7 @@ const HomePage = () => {
                     Cupcakes
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    Enjoy our colourful and fluffy cupcakes.
+                    Enjoy our colourful and fluffy cupcakes items.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -189,7 +189,7 @@ const HomePage = () => {
                     Pastries
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    Indulge in our freshly baked pastries and desserts.
+                    Indulge in our freshly baked pastry items.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -214,7 +214,7 @@ const HomePage = () => {
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image="https://images.unsplash.com/photo-1505253216365-52b2e408fe8b?auto=format&fit=crop&w=1000&q=80"
+                  image="https://images.unsplash.com/photo-1635327173758-85badf17f995?q=80&w=1427&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   title="Cheesecake"
                 />
                 <CardContent>
@@ -233,7 +233,7 @@ const HomePage = () => {
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image="https://images.unsplash.com/photo-1601972599724-c721203e42c1?auto=format&fit=crop&w=1000&q=80"
+                  image="https://images.unsplash.com/photo-1508736375612-66c03035c629?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   title="Fruit Cake"
                 />
                 <CardContent>
@@ -241,7 +241,7 @@ const HomePage = () => {
                     Fruit Cake
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    Our fruit cakes are bursting with seasonal flavors.
+                    Our fruit cakes are bursting with our flavors.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -252,7 +252,7 @@ const HomePage = () => {
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
-                  image="https://images.unsplash.com/photo-1545555323-934970c66aa0?auto=format&fit=crop&w=1000&q=80"
+                  image="https://images.unsplash.com/photo-1590080874088-eec64895b423?q=80&w=894&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   title="Cookies"
                 />
                 <CardContent>
@@ -260,7 +260,7 @@ const HomePage = () => {
                     Cookies
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    Crunchy cookies for every sweet tooth.
+                    Crunchy cookies for every sweet tooth and tasty.
                   </Typography>
                 </CardContent>
               </CardActionArea>

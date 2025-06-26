@@ -126,7 +126,7 @@ export default function SignUpSide() {
                     sm={4}
                     md={7}
                     sx={{
-                        backgroundImage: 'url(https://images.pexels.com/photos/4224305/pexels-photo-4224305.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)',
+                        backgroundImage: 'url(https://plus.unsplash.com/premium_photo-1690214491960-d447e38d0bd0?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
                         backgroundRepeat: 'no-repeat',
                         backgroundColor: (t) =>
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -276,8 +276,6 @@ export default function SignUpSide() {
                     </Box>
                 </Grid>
             </Grid>
-            <br />
-            <br />
             <Footer />
         </ThemeProvider>
     );

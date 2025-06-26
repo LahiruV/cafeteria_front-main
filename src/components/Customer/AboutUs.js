@@ -64,7 +64,7 @@ function AboutUs() {
                         <Card className={classes.card}>
                             <CardMedia
                                 className={classes.cardMedia}
-                                image='https://images.pexels.com/photos/302902/pexels-photo-302902.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                                image='https://plus.unsplash.com/premium_photo-1663050741659-6def151d907f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                                 title="Event Image"
                             />
                         </Card>
@@ -96,7 +96,7 @@ function AboutUs() {
                         <Card className={classes.card}>
                             <CardMedia
                                 className={classes.cardMedia}
-                                image='https://images.pexels.com/photos/1089570/pexels-photo-1089570.jpeg?auto=compress&cs=tinysrgb&w=600'
+                                image='https://plus.unsplash.com/premium_photo-1661721799629-7b6643f49fa0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                                 title="Event Image"
                             />
                         </Card>
